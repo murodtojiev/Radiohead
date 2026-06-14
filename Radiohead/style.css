@@ -1,0 +1,98 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #111; /* Rasm tugaganda tagi qora bo'lib turishi uchun */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("background_image.jpg");
+    background-size: 100% auto; /* Rasm eniga 100% sig'adi, bo'yi shunga moslashadi */
+    background-repeat: no-repeat;
+    background-position: top center;
+    /* background-attachment: fixed; olib tashlandi, endi rasm va yozuv birga scroll bo'ladi */
+    color: white;
+    margin: 0;
+    min-height: 100vh;
+}
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    color: #cccccc;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    margin-bottom: 50px;
+    width: 60%;
+}
+
+p {
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, sans-serif;
+    letter-spacing: 1px;
+    
+    /* Glassmorphism (oynasimon) effekt */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* O'lcham va shakl */
+    max-width: 500px;
+    margin: 15px auto;
+    padding: 18px 20px;
+    border-radius: 12px;
+    
+    /* Animatsiyalar */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+p:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px) scale(1.03);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+/* Scrollbar dizaynini chiroyli qilish */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #111; 
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); 
+}

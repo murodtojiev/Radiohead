@@ -40,14 +40,6 @@ h2 {
     font-family: system-ui, -apple-system, sans-serif;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    margin-bottom: 50px;
-    width: 60%;
-}
-
 .song-card {
     display: block;
     text-decoration: none;

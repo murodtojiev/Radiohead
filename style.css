@@ -48,6 +48,21 @@ hr {
     width: 60%;
 }
 
+.song-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    max-width: 500px;
+    margin: 15px auto;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.song-card:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
 p {
     color: #ffffff;
     text-align: center;
@@ -63,20 +78,17 @@ p {
     border: 1px solid rgba(255, 255, 255, 0.1);
     
     /* O'lcham va shakl */
-    max-width: 500px;
-    margin: 15px auto;
+    margin: 0;
     padding: 18px 20px;
     border-radius: 12px;
     
     /* Animatsiyalar */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-p:hover {
+.song-card:hover p {
     background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-5px) scale(1.03);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     color: #fff;

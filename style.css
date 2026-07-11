@@ -1,79 +1,117 @@
+p {
+  color: #e0e0e0;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 20px auto;
+}
+img {
+  display: block;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto 30px auto;
+  border-radius: 10px;
+}
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #111;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("background_image.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #ffffff;
-    font-family: system-ui, -apple-system, sans-serif;
-    min-height: 100vh;
-    padding: 50px 20px;
+  background-color: #111;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url("background_image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  min-height: 100vh;
+  padding: 50px 20px;
 }
 
 h1 {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
 }
 
 h2 {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-bottom: 40px;
-    color: #aaaaaa;
-    letter-spacing: 2px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 40px;
+  color: #aaaaaa;
+  letter-spacing: 2px;
 }
 
 hr {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 800px;
-    margin: 0 auto 40px auto;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 800px;
+  margin: 0 auto 40px auto;
 }
 
-/* Har bir qator (qo'shiq) uchun sodda dizayn */
-p {
-    max-width: 800px;
-    margin: 0 auto 15px auto;
-    padding: 20px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transition: 0.3s;
+/* Har bir qo'shiq uchun kartochka dizayni */
+.song {
+  max-width: 800px;
+  margin: 0 auto 15px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
-p:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
+.song:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.song h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.song p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #dddddd;
 }
 
 /* Linklar (qo'shiq nomlari) uchun dizayn */
 a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    padding-bottom: 2px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 2px;
 }
 
 a:hover {
-    color: #cccccc;
-    border-bottom-color: #ffffff;
+  color: #cccccc;
+  border-bottom-color: #ffffff;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #111; }
-::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.3); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.5); }
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

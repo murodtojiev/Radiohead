@@ -6,24 +6,22 @@
 
 body {
     background-color: #111;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("background_image.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("background_image.jpeg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: #ffffff;
     font-family: system-ui, -apple-system, sans-serif;
     min-height: 100vh;
+    padding: 50px 20px;
 }
 
 h1 {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
-    margin-top: 60px;
     margin-bottom: 10px;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
 }
 
 h2 {
@@ -31,51 +29,51 @@ h2 {
     font-size: 1.2rem;
     font-weight: 300;
     margin-bottom: 40px;
-    color: #cccccc;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+    color: #aaaaaa;
+    letter-spacing: 2px;
 }
 
-.song-card {
-    display: block;
-    text-decoration: none;
-    max-width: 500px;
-    margin: 15px auto;
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 800px;
+    margin: 0 auto 40px auto;
 }
 
-.song-card p {
-    color: #ffffff;
-    text-align: center;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    padding: 18px 20px;
-    border-radius: 12px;
+/* Har bir qator (qo'shiq) uchun sodda dizayn */
+p {
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+    padding: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-.song-card:hover p {
-    transform: translateY(-5px) scale(1.02);
-    background: rgba(255, 255, 255, 0.15);
+p:hover {
+    background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Scrollbar dizayni */
-::-webkit-scrollbar {
-    width: 8px;
+/* Linklar (qo'shiq nomlari) uchun dizayn */
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 2px;
 }
-::-webkit-scrollbar-track {
-    background: #111; 
+
+a:hover {
+    color: #cccccc;
+    border-bottom-color: #ffffff;
 }
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3); 
-    border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5); 
-}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.5); }

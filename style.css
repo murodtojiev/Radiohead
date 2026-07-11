@@ -1,102 +1,196 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+    --primary-glow: #8a2be2;
+    --secondary-glow: #00ffff;
+    --bg-dark: #0a0a0f;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-main: #ffffff;
+    --text-muted: #a0a0b0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #111; /* Rasm tugaganda tagi qora bo'lib turishi uchun */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("background_image.jpg");
-    background-size: 100% auto; /* Rasm eniga 100% sig'adi, bo'yi shunga moslashadi */
-    background-repeat: no-repeat;
-    background-position: top center;
-    /* background-attachment: fixed; olib tashlandi, endi rasm va yozuv birga scroll bo'ladi */
-    color: white;
     margin: 0;
     min-height: 100vh;
+    background-color: var(--bg-dark);
+    /* Rasm ustiga rangli radial-gradient va to'q qorong'u effekt qo'shildi */
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(138, 43, 226, 0.15), transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(0, 255, 255, 0.15), transparent 50%),
+        linear-gradient(to bottom, rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 1)),
+        url("background_image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    overflow-x: hidden;
 }
+
 h1 {
     text-align: center;
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-top: 60px;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
+    margin: 2rem 0 0.5rem;
+    letter-spacing: -2px;
     text-transform: uppercase;
-    text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
-    font-family: system-ui, -apple-system, sans-serif;
+    background: linear-gradient(to right, #ffffff, #a0a0b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+    animation: fadeInDown 1s ease-out;
 }
 
 h2 {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     font-weight: 300;
-    margin-bottom: 40px;
-    color: #cccccc;
-    letter-spacing: 4px;
+    margin-bottom: 4rem;
+    color: var(--text-muted);
+    letter-spacing: 8px;
     text-transform: uppercase;
-    font-family: system-ui, -apple-system, sans-serif;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+/* Qo'shiqlar ro'yxati uchun konteyner (agar kerak bo'lsa) */
+.song-list {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .song-card {
     display: block;
     text-decoration: none;
     color: inherit;
+    width: 100%;
     max-width: 500px;
     margin: 15px auto;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
+    border-radius: 16px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Elementlar navbati bilan chiqishi uchun */
+.song-card:nth-child(1) { animation-delay: 0.3s; }
+.song-card:nth-child(2) { animation-delay: 0.4s; }
+.song-card:nth-child(3) { animation-delay: 0.5s; }
+.song-card:nth-child(4) { animation-delay: 0.6s; }
+.song-card:nth-child(5) { animation-delay: 0.7s; }
+
+/* Hover qilinganda glowing (nur sochish) effekti */
+.song-card::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow), var(--primary-glow));
+    z-index: -1;
+    border-radius: 18px;
+    background-size: 400%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: gradientMove 3s linear infinite;
+}
+
+.song-card:hover::before {
+    opacity: 1;
+}
+
+.song-card p {
+    margin: 0;
+    padding: 1.2rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 1px;
+    
+    /* Premium Glassmorphism */
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glassmorphism uchun ichki yorug'lik */
+.song-card p::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.08), transparent);
+    border-radius: 16px 16px 0 0;
+    pointer-events: none;
 }
 
 .song-card:hover {
-    transform: translateY(-5px) scale(1.03);
-}
-
-p {
-    color: #ffffff;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-    font-family: system-ui, -apple-system, sans-serif;
-    letter-spacing: 1px;
-    
-    /* Glassmorphism (oynasimon) effekt */
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    
-    /* O'lcham va shakl */
-    margin: 0;
-    padding: 18px 20px;
-    border-radius: 12px;
-    
-    /* Animatsiyalar */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px) scale(1.02);
 }
 
 .song-card:hover p {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                0 0 20px rgba(138, 43, 226, 0.2);
     color: #fff;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255,255,255,0.5);
 }
 
-/* Scrollbar dizaynini chiroyli qilish */
+/* Scrollbar dizayni */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #111; 
+    background: var(--bg-dark); 
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3); 
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 5px;
+    border: 2px solid var(--bg-dark);
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5); 
+    background: rgba(255, 255, 255, 0.3); 
+}
+
+/* Animatsiyalar */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Mobil qurilmalar uchun moslashuvchanlik */
+@media (max-width: 600px) {
+    .song-card p {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
 }
